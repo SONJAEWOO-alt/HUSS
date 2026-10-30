@@ -1,0 +1,20 @@
+# 의존성
+node_modules/
+
+# 환경변수 (실제 키는 커밋 금지)
+server/.env
+server/.env.*
+!server/.env.example
+server/.env.txt
+
+# KOSIS 응답 캐시
+server/.kosis-cache/
+
+# 빌드 산출물
+dist/
+tsconfig.tsbuildinfo
+
+# 로그/OS
+*.log
+.DS_Store
+Thumbs.db

@@ -1,0 +1,24 @@
+{
+  "version": "1.0",
+  "unit_employment": "persons",
+  "unit_rates": "percent",
+  "unit_gaps": "percentage_points",
+  "periods": "202401 etc=April,202402 etc=October; MDIS202510 corresponds to202502",
+  "null": "not observed or unavailable, never coerce to0",
+  "group_map": {
+    "BC": "광업+제조업",
+    "F": "건설업",
+    "GI": "도소매+숙박음식업",
+    "DHJK": "전기+운수+정보통신+금융",
+    "ELS": "E,L,M,N,P,Q,R,S only;O,T,U excluded"
+  },
+  "guards": [
+    "Display period and geography basis on every view",
+    "Every MDIS estimate must display sample_n and precision_unverified",
+    "n<30 is nonofficial screening, not significance rule",
+    "review_flag is exploratory, do not label confirmed mismatch",
+    "No young job seeker counts are supplied",
+    "No standard errors or p-values have been validated"
+  ],
+  "privacy": "Only aggregates in web outputs. Do not publish inputs or mdis_target_records_private.csv."
+}

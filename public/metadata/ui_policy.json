@@ -1,0 +1,46 @@
+{
+  "version": "1.1",
+  "diagnosis_periods": [
+    "202502"
+  ],
+  "diagnosis_default_basis": "workplace",
+  "allowed_statuses": [
+    "unavailable",
+    "no_sample",
+    "insufficient_precision",
+    "exploratory_signal",
+    "no_selected_signal"
+  ],
+  "priority": [
+    "missing or unsupported period => unavailable",
+    "n==0 or no_sample => no_sample",
+    "n<30 => insufficient_precision (retain review_flag only as secondary evidence)",
+    "n>=30 and review_flag => exploratory_signal; SE/RSE still unknown",
+    "otherwise => no_selected_signal; NOT balanced"
+  ],
+  "small_sample_threshold": 30,
+  "threshold_official": false,
+  "confidence_for_every_mdis_row": "unverified",
+  "forbidden_labels": [
+    "미스매치 심각",
+    "미스매치 확정",
+    "균형 확인",
+    "통계적으로 유의",
+    "청년 구직자 부족 규모",
+    "검증된 정책 효과"
+  ],
+  "null_label": "자료 없음 / 추정 불가",
+  "missing_period_policy": "빈 상태; 가장 가까운 기간으로 자동 대체 금지",
+  "sample_n_zero_policy": "취업자0명 표시 금지",
+  "live_badge_policy": "실제 성공 API 응답의 증빙이 있어야 실시간 조회 표기; 캐시는 별도표시",
+  "required_visible_context": [
+    "출처",
+    "기준기간",
+    "거주지/근무지",
+    "산업분류와 분모",
+    "단위",
+    "실제 표본수/미확보",
+    "정밀도미검증",
+    "잠정치여부"
+  ]
+}

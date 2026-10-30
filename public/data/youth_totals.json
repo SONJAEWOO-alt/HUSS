@@ -1,0 +1,34 @@
+[
+  {
+    "basis": "residence",
+    "city": "아산시",
+    "population": 70059.359,
+    "employed": 30528.3408,
+    "employed_n": 155,
+    "rate_pct": 43.575
+  },
+  {
+    "basis": "residence",
+    "city": "천안시",
+    "population": 129331.5943,
+    "employed": 55224.1376,
+    "employed_n": 157,
+    "rate_pct": 42.6996
+  },
+  {
+    "basis": "workplace",
+    "city": "아산시",
+    "population": null,
+    "employed": 31005.7768,
+    "employed_n": 144,
+    "rate_pct": null
+  },
+  {
+    "basis": "workplace",
+    "city": "천안시",
+    "population": null,
+    "employed": 55772.4765,
+    "employed_n": 179,
+    "rate_pct": null
+  }
+]

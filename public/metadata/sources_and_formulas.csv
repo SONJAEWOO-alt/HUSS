@@ -1,0 +1,9 @@
+﻿result_id,source,url,period,formula,output,limits
+A_structure,고용노동부 DT_118N_MONA59,https://kosis.kr/statHtml/statHtml.do?orgId=118&tblId=DT_118N_MONA59,202601,산업군 종사자 / 동일도시 5개 산업군 종사자 합계 ×100,tables/industry_structure.csv,자영업자·무급가족 제외. 지역별고용조사 전체 취업자와 모집단 다름
+A_manufacturing_2024,사업체노동실태현황 DT_118N_SAUPM78,https://kosis.kr/statHtml/statHtml.do?orgId=118&tblId=DT_118N_SAUPM78,2024,C제조업 종사자 / 확보한18개산업대분류 종사자 합계 ×100,tables/business_structure_2024.csv,전국사업체조사 전체와 다름. 2022~23KSIC10과 시계열 연결 안함
+B_demand,고용노동부 DT_118N_MONA59,https://kosis.kr/statHtml/statHtml.do?orgId=118&tblId=DT_118N_MONA59,202401~202601,빈일자리율은 원표 공표율 사용; 반기변화=당기율-직전반기율; 순입직=입직-이직,tables/demand_panel.csv;tables/demand_trend.csv,"종사자/빈일자리월말,입이직월중. 전체종사자를 공표율분모로 임의 대입하지 않음. 2025이후잠정치"
+C_youth,MDIS 지역별고용조사2025하A형,https://mdis.mods.go.kr/,202510,"취업상태1,만15~29세 개인별 시군구가중값 1회 합산; 구성비=산업청년가중합/모든산업청년가중합×100",tables/industry_youth.csv;tables/mdis_reconciliation.csv,원자료403831행 재집계. 원표본없음은 모집단0아님. SE/RSE미확인
+D_vacancy_excess,DT_118N_MONA59,https://kosis.kr/statHtml/statHtml.do?orgId=118&tblId=DT_118N_MONA59,202502,산업 빈일자리율 - 같은도시 전산업 빈일자리율 (%p),tables/imbalance_candidates.csv;web/imbalance_candidates.json,상대적공석강도. 구직자부족규모가 아님
+D_youth_participation_gap,MDIS2025하A형,https://mdis.mods.go.kr/,202510,해당산업 청년임금근로자 가중합/해당산업 전체연령 임금근로자 가중합×100 - 동일도시 공통5산업군 청년임금근로자합/동범위 전체연령 임금근로자합×100,tables/imbalance_candidates.csv;web/imbalance_candidates.json,"basis별 계산; 근무지 기준을 주 비교로 사용,상용/임시/일용만. 산업고용률·청년구직자공급률 아님"
+D_composition_gap,MDIS2025하A형,https://mdis.mods.go.kr/,202510,공통5개산업군 중 산업별 청년취업자 구성비 - 같은범위 전체연령취업자 구성비 (%p),tables/mdis_sector_stats.csv,같은조사 안에서의 대표성차이. 산업연령구조를 반영하며 미스매치확정 아님
+D_review_flag,위 두 자료 병렬 비교,https://mdis.mods.go.kr/,2025하,빈일자리율 지역평균초과 AND 청년참여비중 지역기준미달,web/imbalance_candidates.json,통계적검정아닌 탐색조건. 근무지 기준 후보3개 모두청년임금근로자n<30. 확정진단·추천순위로사용금지

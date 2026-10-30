@@ -1,0 +1,367 @@
+{
+  "version": "1.1",
+  "snapshot_date": "2026-10-30",
+  "provenance_mode": "static_r_snapshot",
+  "api_called_in_this_handoff": false,
+  "data_base_path": "/data/",
+  "datasets": [
+    {
+      "id": "industry_structure",
+      "file": "data/industry_structure.json",
+      "rows": 10,
+      "keys": [
+        "city",
+        "period",
+        "group"
+      ],
+      "periods": [
+        "202601"
+      ],
+      "implicit_period": null,
+      "source_ids": [
+        "regional_labor"
+      ],
+      "metric_fields": [
+        "employees",
+        "employee_share_pct"
+      ],
+      "sample_fields_note": "없음; 수요조사 RSE 미확보",
+      "scope_warning": "5산업군 종사자 합계 분모",
+      "fields": [
+        "city",
+        "period",
+        "group",
+        "employees",
+        "separations",
+        "vacancies",
+        "vacancy_rate",
+        "hires",
+        "sector",
+        "net_hires",
+        "employee_share_pct"
+      ],
+      "sha256": "02e7da88c541746975c65677f5b5419ad78b3dd906731e2ddcce02352269ab16",
+      "numeric_precision": "JSON 소수4자리; 표시 인원은 약 정수, 비율1자리, 차이2자리",
+      "web_permission": "집계만 포함. 원표·개인자료 미포함. MDIS 이용조건 준수; 별도 재이용 허가를 새로 취득한 것은 아님"
+    },
+    {
+      "id": "business_structure_2024",
+      "file": "data/business_structure_2024.json",
+      "rows": 36,
+      "keys": [
+        "region",
+        "period",
+        "industry"
+      ],
+      "periods": [
+        "2024"
+      ],
+      "implicit_period": null,
+      "source_ids": [
+        "business2024"
+      ],
+      "metric_fields": [
+        "value",
+        "share_pct"
+      ],
+      "sample_fields_note": "없음; 개인 표본 자료 아님",
+      "scope_warning": "확보18산업 분모; 전국사업체조사 전체 아님",
+      "fields": [
+        "source_file",
+        "table_id",
+        "period",
+        "frequency_raw",
+        "region_code_raw",
+        "region",
+        "dimension2_code",
+        "dimension2",
+        "dimension3_code",
+        "dimension3",
+        "item_code",
+        "item",
+        "unit",
+        "raw_value",
+        "value",
+        "value_status",
+        "source_url",
+        "industry",
+        "share_pct"
+      ],
+      "sha256": "f6ce6f14dea3247032664bb320f80f784187ac07628bdd5b59b642cc2e7f56a3",
+      "numeric_precision": "JSON 소수4자리; 표시 인원은 약 정수, 비율1자리, 차이2자리",
+      "web_permission": "집계만 포함. 원표·개인자료 미포함. MDIS 이용조건 준수; 별도 재이용 허가를 새로 취득한 것은 아님"
+    },
+    {
+      "id": "demand_trend",
+      "file": "data/demand_trend.json",
+      "rows": 60,
+      "keys": [
+        "city",
+        "period",
+        "group"
+      ],
+      "periods": [
+        "202401",
+        "202402",
+        "202501",
+        "202502",
+        "202601"
+      ],
+      "implicit_period": null,
+      "source_ids": [
+        "regional_labor"
+      ],
+      "metric_fields": [
+        "employees",
+        "vacancies",
+        "vacancy_rate",
+        "hires",
+        "separations",
+        "net_hires",
+        "previous_half_change_pp"
+      ],
+      "sample_fields_note": "없음; 수요조사 RSE 미확보",
+      "scope_warning": "전산업 ALL과5개 군. ALL을 산업군 합계에 더하지 않음",
+      "fields": [
+        "city",
+        "period",
+        "group",
+        "employees",
+        "separations",
+        "vacancies",
+        "vacancy_rate",
+        "hires",
+        "sector",
+        "net_hires",
+        "prior_rate",
+        "previous_half_change_pp"
+      ],
+      "sha256": "3f8f7607097bcdedb61b68d1d64939b8e9b957ba3b95fbcda012eaa834ab53f3",
+      "numeric_precision": "JSON 소수4자리; 표시 인원은 약 정수, 비율1자리, 차이2자리",
+      "web_permission": "집계만 포함. 원표·개인자료 미포함. MDIS 이용조건 준수; 별도 재이용 허가를 새로 취득한 것은 아님"
+    },
+    {
+      "id": "industry_youth",
+      "file": "data/industry_youth.json",
+      "rows": 84,
+      "keys": [
+        "basis",
+        "city",
+        "industry"
+      ],
+      "periods": [
+        "202502"
+      ],
+      "implicit_period": "202502",
+      "source_ids": [
+        "mdis2025h2"
+      ],
+      "metric_fields": [
+        "estimate_persons",
+        "share_pct"
+      ],
+      "sample_fields_note": "sample_n; small_sample; no_sample; precision",
+      "scope_warning": "분모 A~U 전체 청년 취업자",
+      "fields": [
+        "basis",
+        "city",
+        "industry",
+        "sample_n",
+        "estimate_persons",
+        "effective_n",
+        "share_pct",
+        "small_sample",
+        "precision",
+        "no_sample"
+      ],
+      "sha256": "da33276f5b4c6dadaf9a0262cfdde8bb7f72c1c6ad9c96bcdf0de2ae933b770c",
+      "numeric_precision": "JSON 소수4자리; 표시 인원은 약 정수, 비율1자리, 차이2자리",
+      "web_permission": "집계만 포함. 원표·개인자료 미포함. MDIS 이용조건 준수; 별도 재이용 허가를 새로 취득한 것은 아님"
+    },
+    {
+      "id": "youth_totals",
+      "file": "data/youth_totals.json",
+      "rows": 4,
+      "keys": [
+        "basis",
+        "city"
+      ],
+      "periods": [
+        "202502"
+      ],
+      "implicit_period": "202502",
+      "source_ids": [
+        "mdis2025h2"
+      ],
+      "metric_fields": [
+        "employed",
+        "population",
+        "rate_pct"
+      ],
+      "sample_fields_note": "employed_n; 모든 추정오차 미확인",
+      "scope_warning": "population/rate_pct는 거주지에만 의미 있음; 근무지NULL",
+      "fields": [
+        "basis",
+        "city",
+        "population",
+        "employed",
+        "employed_n",
+        "rate_pct"
+      ],
+      "sha256": "37c806dfc871d411e6996aba7eef9a9ee00ff2070e4af299b568984b3a3e444c",
+      "numeric_precision": "JSON 소수4자리; 표시 인원은 약 정수, 비율1자리, 차이2자리",
+      "web_permission": "집계만 포함. 원표·개인자료 미포함. MDIS 이용조건 준수; 별도 재이용 허가를 새로 취득한 것은 아님"
+    },
+    {
+      "id": "mdis_reconciliation",
+      "file": "data/mdis_reconciliation.json",
+      "rows": 2,
+      "keys": [
+        "city"
+      ],
+      "periods": [
+        "202502"
+      ],
+      "implicit_period": "202502",
+      "source_ids": [
+        "mdis2025h2",
+        "youth_kosis"
+      ],
+      "metric_fields": [
+        "employed",
+        "reference_thousand",
+        "rounded_thousand",
+        "matches"
+      ],
+      "sample_fields_note": "employed_n",
+      "scope_warning": "거주지 총계 검산용; 상세 산업 신뢰도 지표 아님",
+      "fields": [
+        "basis",
+        "city",
+        "population",
+        "employed",
+        "employed_n",
+        "rate_pct",
+        "reference_thousand",
+        "rounded_thousand",
+        "matches"
+      ],
+      "sha256": "b2da2f0d95bf74ee5f371fff77bb1cc050a5d6604101aa86bfd904f185b41f84",
+      "numeric_precision": "JSON 소수4자리; 표시 인원은 약 정수, 비율1자리, 차이2자리",
+      "web_permission": "집계만 포함. 원표·개인자료 미포함. MDIS 이용조건 준수; 별도 재이용 허가를 새로 취득한 것은 아님"
+    },
+    {
+      "id": "mdis_sector_stats",
+      "file": "data/mdis_sector_stats.json",
+      "rows": 20,
+      "keys": [
+        "basis",
+        "city",
+        "group"
+      ],
+      "periods": [
+        "202502"
+      ],
+      "implicit_period": "202502",
+      "source_ids": [
+        "mdis2025h2"
+      ],
+      "metric_fields": [
+        "youth_estimate",
+        "youth_composition_pct",
+        "youth_within_industry_pct",
+        "composition_gap_pp"
+      ],
+      "sample_fields_note": "youth_n; youth_wage_n; small_sample; small_wage_sample",
+      "scope_warning": "공통5군; 구성비는 전체취업자, 참여차이는 임금근로자",
+      "fields": [
+        "basis",
+        "city",
+        "group",
+        "all_n",
+        "all_estimate",
+        "youth_n",
+        "youth_estimate",
+        "youth_wage_n",
+        "youth_wage_estimate",
+        "all_wage_estimate",
+        "youth_weight_sq",
+        "youth_composition_pct",
+        "all_composition_pct",
+        "composition_gap_pp",
+        "youth_within_industry_pct",
+        "city_youth_baseline_pct",
+        "small_sample",
+        "small_wage_sample",
+        "sector"
+      ],
+      "sha256": "84568731f4704421ac7beb49def7bb24da5219b75efb69104d8adf3590b04a95",
+      "numeric_precision": "JSON 소수4자리; 표시 인원은 약 정수, 비율1자리, 차이2자리",
+      "web_permission": "집계만 포함. 원표·개인자료 미포함. MDIS 이용조건 준수; 별도 재이용 허가를 새로 취득한 것은 아님"
+    },
+    {
+      "id": "imbalance_candidates",
+      "file": "data/imbalance_candidates.json",
+      "rows": 20,
+      "keys": [
+        "basis",
+        "city",
+        "period",
+        "group"
+      ],
+      "periods": [
+        "202502"
+      ],
+      "implicit_period": null,
+      "source_ids": [
+        "mdis2025h2",
+        "regional_labor"
+      ],
+      "metric_fields": [
+        "vacancy_excess_pp",
+        "youth_participation_gap_pp",
+        "review_flag"
+      ],
+      "sample_fields_note": "youth_wage_n; small_wage_sample; precision",
+      "scope_warning": "동월 비교지만 조사주간/월말·모집단 차이 존재; 인과/확정미스매치 아님",
+      "fields": [
+        "basis",
+        "city",
+        "group",
+        "all_n",
+        "all_estimate",
+        "youth_n",
+        "youth_estimate",
+        "youth_wage_n",
+        "youth_wage_estimate",
+        "all_wage_estimate",
+        "youth_weight_sq",
+        "youth_composition_pct",
+        "all_composition_pct",
+        "composition_gap_pp",
+        "youth_within_industry_pct",
+        "city_youth_baseline_pct",
+        "small_sample",
+        "small_wage_sample",
+        "sector",
+        "period",
+        "employees",
+        "separations",
+        "vacancies",
+        "vacancy_rate",
+        "hires",
+        "sector_demand",
+        "net_hires",
+        "overall_vacancy_rate",
+        "vacancy_excess_pp",
+        "youth_participation_gap_pp",
+        "review_flag",
+        "interpretation",
+        "precision"
+      ],
+      "sha256": "680e6c41e91811a6c094fcaf3555e79d1ba521105ddc43bd27684d4d59fd5710",
+      "numeric_precision": "JSON 소수4자리; 표시 인원은 약 정수, 비율1자리, 차이2자리",
+      "web_permission": "집계만 포함. 원표·개인자료 미포함. MDIS 이용조건 준수; 별도 재이용 허가를 새로 취득한 것은 아님"
+    }
+  ]
+}

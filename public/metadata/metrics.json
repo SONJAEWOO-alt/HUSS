@@ -1,0 +1,168 @@
+{
+  "metrics": [
+    {
+      "field": "employees",
+      "label": "종사자",
+      "unit": "명",
+      "formula": "원표 공표값",
+      "sample_n_field": null,
+      "source_ids": [
+        "regional_labor"
+      ]
+    },
+    {
+      "field": "vacancies",
+      "label": "빈 일자리",
+      "unit": "명",
+      "formula": "원표 공표값",
+      "sample_n_field": null,
+      "source_ids": [
+        "regional_labor"
+      ]
+    },
+    {
+      "field": "vacancy_rate",
+      "label": "빈 일자리율",
+      "unit": "%",
+      "formula": "원표 공표율; 전체종사자를 분모로 재계산 금지",
+      "sample_n_field": null,
+      "source_ids": [
+        "regional_labor"
+      ]
+    },
+    {
+      "field": "employee_share_pct",
+      "label": "5군 종사자 구성비",
+      "unit": "%",
+      "formula": "100*employees/sum(employees across5groups same city,period)",
+      "sample_n_field": null,
+      "source_ids": [
+        "regional_labor"
+      ]
+    },
+    {
+      "field": "previous_half_change_pp",
+      "label": "전기 대비 공석률 차이",
+      "unit": "%p",
+      "formula": "rate(t)-rate(previous half)",
+      "sample_n_field": null,
+      "source_ids": [
+        "regional_labor"
+      ]
+    },
+    {
+      "field": "net_hires",
+      "label": "순입직",
+      "unit": "명",
+      "formula": "hires-separations",
+      "sample_n_field": null,
+      "source_ids": [
+        "regional_labor"
+      ]
+    },
+    {
+      "field": "estimate_persons",
+      "label": "산업별 청년 취업자 추정치",
+      "unit": "명",
+      "formula": "sum(person_weight where employed and age15..29)",
+      "sample_n_field": "sample_n",
+      "source_ids": [
+        "mdis2025h2"
+      ]
+    },
+    {
+      "field": "share_pct",
+      "label": "전체산업 중 청년 구성비",
+      "unit": "%",
+      "formula": "100*estimate_persons/sum(estimate_persons A..U same city,basis)",
+      "sample_n_field": "sample_n",
+      "source_ids": [
+        "mdis2025h2"
+      ]
+    },
+    {
+      "field": "youth_composition_pct",
+      "label": "공통5군 청년 구성비",
+      "unit": "%",
+      "formula": "100*youth_estimate/sum(youth_estimate across5groups same city,basis)",
+      "sample_n_field": "youth_n",
+      "source_ids": [
+        "mdis2025h2"
+      ]
+    },
+    {
+      "field": "youth_within_industry_pct",
+      "label": "산업 임금근로자 중 청년 비중",
+      "unit": "%",
+      "formula": "100*youth_wage_estimate/all_wage_estimate",
+      "sample_n_field": "youth_wage_n",
+      "source_ids": [
+        "mdis2025h2"
+      ]
+    },
+    {
+      "field": "city_youth_baseline_pct",
+      "label": "공통5군 임금근로자 중 청년 비중",
+      "unit": "%",
+      "formula": "100*sum(youth_wage_estimate)/sum(all_wage_estimate)",
+      "sample_n_field": "youth_wage_n",
+      "source_ids": [
+        "mdis2025h2"
+      ]
+    },
+    {
+      "field": "composition_gap_pp",
+      "label": "청년/전체연령 산업구성 차이",
+      "unit": "%p",
+      "formula": "youth_composition_pct-all_composition_pct",
+      "sample_n_field": "youth_n",
+      "source_ids": [
+        "mdis2025h2"
+      ]
+    },
+    {
+      "field": "vacancy_excess_pp",
+      "label": "지역 대비 공석률 차이",
+      "unit": "%p",
+      "formula": "sector.vacancy_rate-city.ALL.vacancy_rate",
+      "sample_n_field": null,
+      "source_ids": [
+        "regional_labor"
+      ]
+    },
+    {
+      "field": "youth_participation_gap_pp",
+      "label": "지역 대비 청년 임금근로자 비중 차이",
+      "unit": "%p",
+      "formula": "youth_within_industry_pct-city_youth_baseline_pct",
+      "sample_n_field": "youth_wage_n",
+      "source_ids": [
+        "mdis2025h2"
+      ]
+    },
+    {
+      "field": "review_flag",
+      "label": "탐색 조건 충족 여부",
+      "unit": "boolean",
+      "formula": "vacancy_excess_pp>0 AND youth_participation_gap_pp<0",
+      "sample_n_field": "youth_wage_n",
+      "source_ids": [
+        "regional_labor",
+        "mdis2025h2"
+      ]
+    }
+  ],
+  "other_units": {
+    "*_n": "실제 표본수 명; 가중치 적용 전",
+    "*_estimate": "가중 추정 명",
+    "youth_weight_sq": "가중치 제곱합; UI에 노출 금지",
+    "effective_n": "가중치 집중도 진단; 복합표본 유효표본 아님",
+    "business_structure_2024.value": "공표 종사자 명",
+    "business_structure_2024.share_pct": "확보18산업 종사자 합계 기준 %",
+    "youth_totals.population": "거주지 청년 추계인구 명; 근무지null",
+    "youth_totals.rate_pct": "거주지 청년 고용률 %",
+    "reference_thousand": "천명"
+  },
+  "missing": "null != 0",
+  "rounding": "UI 표시를 반올림; 판단은 제공 review_flag와 허용오차 검증값 사용"
+}

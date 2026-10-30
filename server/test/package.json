@@ -1,0 +1,8 @@
+{
+  "scripts": {
+    "test": "node server/test/run-tests.mjs",
+    "test:mcp": "node server/test/mcp-client-test.mjs",
+    "test:kosis-live": "node server/test/mcp-kosis-verify.mjs",
+    "test:gemini-live": "node server/test/gemini-verify.mjs"
+  }
+}

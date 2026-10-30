@@ -1,0 +1,54 @@
+{
+  "checked_at": "2026-10-30",
+  "new_external_calls_in_handoff": 0,
+  "server_implemented": false,
+  "capabilities": [
+    {
+      "id": "kosis_demand",
+      "table_id": "DT_118N_MONA59",
+      "status": "historical_success_saved_response",
+      "current_session_live_call": false,
+      "historical_cells_reconciled": 300,
+      "authentication": "KOSIS_API_KEY server-side",
+      "evidence_files": [
+        "01_raw\\acquired-demand-asan-2024.json",
+        "01_raw\\acquired-demand-asan-full.json",
+        "01_raw\\acquired-demand-cheonan-2024.json",
+        "01_raw\\acquired-demand-cheonan-full.json"
+      ],
+      "source_url": "https://kosis.kr/statHtml/statHtml.do?orgId=118&tblId=DT_118N_MONA59"
+    },
+    {
+      "id": "mdis",
+      "status": "static_aggregate_only",
+      "api_verified": false,
+      "authentication": "사용자 로그인 다운로드 자료의 집계만 사용",
+      "source_url": "https://mdis.mods.go.kr/"
+    },
+    {
+      "id": "datagokr",
+      "status": "historical_search_success_only",
+      "posting_api_verified": false,
+      "endpoint": "https://datagokr.dev/mcp"
+    },
+    {
+      "id": "work24",
+      "status": "spec_confirmed_auth_unavailable",
+      "authenticated_api_successes": 0,
+      "authentication": "기업회원·기관자격·담당자심사·authKey",
+      "source_url": "https://www.work24.go.kr/cm/e/a/0110/selectOpenApiIntro.do",
+      "portal_url": "https://www.data.go.kr/data/3038225/openapi.do",
+      "public_web_sample_count_prior_task": 25,
+      "included_in_package": false,
+      "reason_excluded": "채용공고 데이터 재이용 조건 제한; 이번 패키지는 R 통계만"
+    },
+    {
+      "id": "alio",
+      "status": "spec_confirmed_not_called",
+      "authenticated_api_successes": 0,
+      "authentication": "활용신청·본인 serviceKey, 개발자동승인 운영심의",
+      "source_url": "https://www.data.go.kr/data/15125273/openapi.do",
+      "city_level_coverage_verified": false
+    }
+  ]
+}

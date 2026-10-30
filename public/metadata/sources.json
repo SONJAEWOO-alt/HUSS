@@ -1,0 +1,49 @@
+{
+  "regional_labor": {
+    "agency": "고용노동부",
+    "survey": "지역별사업체노동력조사",
+    "table_id": "DT_118N_MONA59",
+    "url": "https://kosis.kr/statHtml/statHtml.do?orgId=118&tblId=DT_118N_MONA59",
+    "basis": "workplace",
+    "population": "조사대상 사업체 종사자; 자영업자·무급가족 제외",
+    "classification": "공표 초대분류 BC/F/GI/DHJK/EL~S; 개정차수는 저장 근거에서 미확정",
+    "time": "상반기4월·하반기10월: 종사자/빈일자리 월말, 입직/이직 월중",
+    "provisional_from": "202501",
+    "precision": "RSE 미확보; 유의성 미검증"
+  },
+  "business2024": {
+    "agency": "고용노동부",
+    "survey": "사업체노동실태현황",
+    "table_id": "DT_118N_SAUPM78",
+    "url": "https://kosis.kr/statHtml/statHtml.do?orgId=118&tblId=DT_118N_SAUPM78",
+    "basis": "workplace",
+    "population": "전국사업체조사 재가공; 자영업자만·자영업자+무급가족만 사업체, 공무원기관, 물리적장소 없는 사업체 제외",
+    "classification": "KSIC11 확보18대분류 A~S 중 O 제외; T/U 없음",
+    "time": "2024년 연간 기준; 세부 기준일 이번에 재확인하지 않음",
+    "precision": "공표 집계; 본 패키지에 표본수 없음"
+  },
+  "mdis2025h2": {
+    "agency": "국가데이터처(MDIS)",
+    "survey": "지역별고용조사 2025년 하반기 공공용 A형 시군구 대분류",
+    "table_id": null,
+    "dataset_id": "MDIS_2025H2_A",
+    "url": "https://mdis.mods.go.kr/ofrData/selectSvcBytOfrItmList.do?curMenuNo=UI_POR_P9230",
+    "basis": "row.basis",
+    "population": "가구조사 취업자; youth=만15~29, 경제활동구분코드1",
+    "classification": "KSIC11 A~U; 비교5군은 A/O/T/U 제외",
+    "time": "202510 조사대상 주간; 정확한 주간 경계 미확인",
+    "weight": "시군구가중값 개인별1회 합산",
+    "wage_scope": "현직장종사상지위코드1·2·3(상용·임시·일용)",
+    "precision": "전 셀 SE/RSE/CI 미산출. n<30은 팀의 비공식 선별 경고, n>=30도 검증 완료 아님"
+  },
+  "youth_kosis": {
+    "agency": "국가데이터처",
+    "survey": "지역별고용조사 연령별 취업자",
+    "table_id": "DT_1ES3A03_A01S",
+    "url": "https://kosis.kr/statHtml/statHtml.do?orgId=101&tblId=DT_1ES3A03_A01S",
+    "basis": "residence",
+    "time": "2025하반기",
+    "unit": "천명",
+    "purpose": "MDIS 총계 반올림 검산; 세부 산업 정밀성 보장 아님"
+  }
+}
