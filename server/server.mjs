@@ -1,4 +1,4 @@
-// ===== 천안·아산 고용 미스매치 서비스 백엔드 =====
+﻿// ===== 천안·아산 고용 미스매치 서비스 백엔드 =====
 // 설계 원칙: 정적 데이터만으로 웹서비스가 동작하며, Gemini/KOSIS/MCP 실패는 각각 독립적으로 처리된다.
 import 'dotenv/config'
 import express from 'express'
@@ -13,6 +13,8 @@ import { isKosisConfigured, fetchKosisEmployment, PERIOD_TO_PRD } from './lib/ko
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const app = express()
 const PORT = Number(process.env.PORT || 8787)
+// MCP 서버 URL: 로컬은 8788, 배포 환경은 MCP_URL 환경변수로 오버라이드
+const MCP_URL = process.env.MCP_URL || `http://localhost:${Number(process.env.MCP_PORT || 8788)}/mcp`
 
 app.use(cors())
 app.use(express.json({ limit: '256kb' }))
@@ -194,7 +196,7 @@ app.post('/api/kosis/employment', async (req, res) => {
 
 app.get('/api/mcp/status', async (_req, res) => {
   try {
-    const r = await fetch('http://localhost:8788/mcp', {
+    const r = await fetch(MCP_URL, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', Accept: 'application/json, text/event-stream' },
       body: JSON.stringify({ jsonrpc: '2.0', id: 1, method: 'initialize', params: { protocolVersion: '2025-03-26', capabilities: {}, clientInfo: { name: 'status-probe', version: '1.0' } } }),
@@ -217,7 +219,7 @@ app.post('/api/mcp/call', async (req, res) => {
 
   try {
     // 1) initialize
-    const initRes = await fetch('http://localhost:8788/mcp', {
+    const initRes = await fetch(MCP_URL, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', Accept: 'application/json, text/event-stream' },
       body: JSON.stringify({ jsonrpc: '2.0', id: 1, method: 'initialize', params: { protocolVersion: '2025-03-26', capabilities: {}, clientInfo: { name: 'web-proxy', version: '1.0' } } }),
@@ -227,14 +229,14 @@ app.post('/api/mcp/call', async (req, res) => {
     const headers = { 'Content-Type': 'application/json', Accept: 'application/json, text/event-stream' }
     if (session) headers['mcp-session-id'] = session
     // initialize 후 initialized notification
-    await fetch('http://localhost:8788/mcp', {
+    await fetch(MCP_URL, {
       method: 'POST',
       headers,
       body: JSON.stringify({ jsonrpc: '2.0', method: 'notifications/initialized' }),
       signal: AbortSignal.timeout(4000)
     }).catch(() => {})
     // 2) tools/call
-    const callRes = await fetch('http://localhost:8788/mcp', {
+    const callRes = await fetch(MCP_URL, {
       method: 'POST',
       headers,
       body: JSON.stringify({ jsonrpc: '2.0', id: 2, method: 'tools/call', params: { name: tool, arguments: args ?? {} } }),
@@ -274,5 +276,5 @@ app.listen(PORT, () => {
   console.log(`[server] 백엔드 실행 중: http://localhost:${PORT}`)
   console.log(`[server] Gemini: ${isGeminiConfigured() ? '키 설정됨' : '미설정(근거표만 제공)'}`)
   console.log(`[server] KOSIS: ${isKosisConfigured() ? '키 설정됨' : '미설정(인증 필요·미검증)'}`)
-  console.log(`[server] MCP 서버는 별도 실행: npm run mcp (http://localhost:8788/mcp)`)
+  console.log(`[server] MCP 서버는 별도 실행: npm run mcp (MCP_URL)`)
 })
